@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body, html {
+           height: 100%;
+          margin: 0;
+          }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #DBE0E4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url(pexels-pixabay-53594.jpg);
+            height: 100%; 
+
+             /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .signup-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color:  #C0DDE7;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color:#5ac5e9;
+        }
+
+        input.shd_bor{
+            box-shadow: 5px 5px 2.5px #aaaaaa;
+            border-radius: 25px;
+            border-style: hidden;
+        }
+    </style>
+    <script>
+        function validateLogin() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const passwordError = document.getElementById('passwordError');
+
+      // Password validation conditions
+      const lowercaseRegex = /[a-z]/;
+      const uppercaseRegex = /[A-Z]/;
+      const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+
+      if (
+        lowercaseRegex.test(password) &&
+        uppercaseRegex.test(password) &&
+        specialCharRegex.test(password) &&
+        password.length >= 6
+      ) {
+        // Password meets all conditions
+        passwordError.textContent = '';
+        // You can add further logic here, like submitting the form or redirecting to another page.
+        alert('Login successful!');
+      } else {
+        // Password does not meet the conditions
+        passwordError.textContent = 'Password must have at least one lowercase letter, one uppercase letter, one special character, and be at least 6 characters long.';
+        submitButton.disabled = true;
+      }
+    }
+      </script>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Login</h1>
+        <form action="#" method="post" style="font-size: large;"> 
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your E-Mail" required class="shd_bor"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter a password" required class="shd_bor">
+            <br> <br>
+            <span id="passwordError" style="color: red;"></span><br>
+            <button type="submit" style="font-size: large; border-radius: 25px;" onclick="validateLogin()" >Login</button> <br> <br>
+            <a href="Signup.html" style="font-size: medium; text-decoration: none;">Or SignUp?</a>
+            <a href="index.html" style="font-size: medium; text-decoration: none;">Or Return Home?</a>
+            <p style="color: red; font-size: small;">Note: Refresh Page to retry the Login Page.</p>
+        </form>
+    </div>
+      
+</body>
+</html>

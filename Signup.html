@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        body, html {
+           height: 100%;
+          margin: 0;
+          }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #DBE0E4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url(pexels-pixabay-53594.jpg);
+            height: 100%; 
+
+             /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .signup-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #C0DDE7;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color:#5ac5e9;
+            color: white;
+        }
+
+        input.shd_bor{
+            box-shadow: 5px 5px 2.5px #aaaaaa;
+            border-radius: 25px;
+            border-style: hidden;
+        }
+    </style>
+    <script>
+         function validatePassword() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm_password").value;
+    var passwordError = document.getElementById("passwordError");
+    var submitButton = document.querySelector("button");
+
+    // Reset error message
+    passwordError.textContent = "";
+
+    // Enable the submit button
+    submitButton.disabled = false;
+
+    // Check if the password meets the conditions
+    if (password.length < 6) {
+      passwordError.textContent = "Password must be at least 6 characters long";
+      submitButton.disabled = true;
+    } else if (!/[a-z]/.test(password)) {
+      passwordError.textContent = "Password must contain at least one lowercase letter";
+      submitButton.disabled = true;
+    } else if (!/[A-Z]/.test(password)) {
+      passwordError.textContent = "Password must contain at least one uppercase letter";
+      submitButton.disabled = true;
+    } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password)) {
+      passwordError.textContent = "Password must contain at least one special character";
+      submitButton.disabled = true;
+    } else if (password !== confirmPassword) {
+      passwordError.textContent = "Passwords do not match";
+      submitButton.disabled = true;
+    }
+  }
+  function validatePhoneNumber() {
+      const phoneNumber = document.getElementById('Phonenumber').value;
+      const phoneNumberError = document.getElementById('phoneNumberError');
+
+      // Phone number validation conditions
+      const phoneNumberRegex = /^[6-9]\d{9}$/;
+
+      if (phoneNumberRegex.test(phoneNumber)) {
+        // Phone number is valid
+        phoneNumberError.textContent = '';
+        // You can add further logic here, like submitting the form or redirecting to another page.
+        alert('Sign Up successful!');
+      } else {
+        // Phone number is not valid
+        phoneNumberError.textContent = 'Invalid phone number. It should start with 6, 7, 8, or 9 and have 10 digits.';
+      }
+    }
+    </script>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        <form action="#" method="post" style="font-size: large;">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter a username" required class="shd_bor"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your E-Mail" required class="shd_bor"><br><br>
+
+            <label for="Phonenumber">Phone Number:</label>
+            <input type="tel" id="Phonenumber" name="Phonenumber" placeholder="Enter your Phone Number" required class="shd_bor"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter a password" required class="shd_bor"><br><br>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Retype ypur password" required class="shd_bor"> 
+            <br> <br>
+            <p id="passwordError" id="phoneNumberError" style="color: red;"></p>
+            <button type="submit" style="font-size: large; border-radius: 25px;" onclick="validatePassword()" onclick="validatePhoneNumber()">Sign Up</button> <br> <br>
+            <a href="LoginPage.html" style="font-size: medium; text-decoration: none;">Or Login?</a>
+            <a href="index.html" style="font-size: medium; text-decoration: none;">Or Return Home?</a>
+            <p style="color: red; font-size: small;">Note: Refresh Page to retry the SignUp Page.</p>
+        </form>
+    </div>
+</body>
+</html>
