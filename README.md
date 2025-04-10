@@ -6,17 +6,9 @@ This is a **basic web technology project** demonstrating user authentication fea
 
 ## Features
 
-- ✅ Login Page  
-- ✅ Sign-Up Page  
-- ✅ Home Page (with navigation to other pages)
-
----
-
-## Tech Stack
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
+-  Login Page  
+-  Sign-Up Page  
+-  Home Page (with navigation to other pages)
 
 ---
 
