@@ -1,8 +1,31 @@
-# Sign-Up-Sign-In-Page
-This Basic Web-Tech Project
-<br>
-It Contains: 1.Login Page 
-2. SignUp Page 
-3. Home-Page(Directing to the other pages)
-<br>
-Author: Mantena Monish
+# Sign-Up / Sign-In Web Project
+
+This is a **basic web technology project** demonstrating user authentication features using HTML, CSS, and JavaScript.
+
+---
+
+## Features
+
+- ✅ Login Page  
+- ✅ Sign-Up Page  
+- ✅ Home Page (with navigation to other pages)
+
+---
+
+## Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+
+---
+
+## Navigation
+
+| Page        | Description               |
+|-------------|---------------------------|
+| `index.html`| Home Page                 |
+| `login.html`| Login Page                |
+| `signup.html`| Sign-Up Page              |
+
+
